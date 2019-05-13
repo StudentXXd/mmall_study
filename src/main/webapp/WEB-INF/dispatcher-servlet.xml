@@ -8,8 +8,7 @@
 	http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--<context:component-scan base-package="com.mmall.controller" annotation-config="true"/>-->
-    <context:component-scan base-package="com.mmall.controller" use-default-filters="false">
+    <context:component-scan base-package="com.mmall.controller" annotation-config="true" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -41,6 +40,20 @@
         <property name="maxInMemorySize" value="4096"/>
         <property name="defaultEncoding" value="UTF-8"></property>
     </bean>
+
+    <!-- 拦截器 -->
+    <mvc:interceptors>
+        <!-- 定义在这里的，所有的bean都会拦截 -->
+        <!--<bean></bean>-->
+
+        <mvc:interceptor>
+            <!-- /**代表包含同级和子集 /*只包含同级 -->
+            <mvc:mapping path="/manage/**"/>
+            <!-- 不拦截登录请求 -->
+            <!--<mvc:exclude-mapping path="/manage/user/login.do"/>-->
+            <bean class="com.mmall.controller.common.interceptor.AuthorityInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 
 </beans>
