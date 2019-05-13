@@ -14,7 +14,7 @@ public interface IUserService {
 
     ServerResponse<String> selectQuestion(String username);
 
-    ServerResponse<String> CheckAnswer(String username, String question, String answer);
+    ServerResponse<String> checkAnswer(String username, String question, String answer);
 
     ServerResponse<String> forgetResetPassword(String username, String passwordNew, String forgetToken);
 
