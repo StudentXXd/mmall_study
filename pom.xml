@@ -261,13 +261,11 @@
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>2.9.0</version>
-            <!--<type>bundle</type>-->
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-avro</artifactId>
             <version>2.9.0</version>
-            <type>bundle</type>
         </dependency>
     </dependencies>
 
