@@ -24,6 +24,7 @@ public class CloseOrderTask {
         log.info("关闭订单定时任务结束");
     }
 
+    @Scheduled(cron = "0 */1 * * * ?")//每一分钟执行一次
     public void closeOrderTaskV2(){
         log.info("关闭订单定时任务启动");
         long lockTimeout = Long.parseLong(PropertiesUtil.getProperty("lock.timeout","5000"));
@@ -41,7 +42,7 @@ public class CloseOrderTask {
         RedisShardedPoolUtil.expire(lockName,50);//有效期50秒，防止死锁
         log.info("获取{}，ThreadName：{}",Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK,Thread.currentThread().getName());
         int hour = Integer.parseInt(PropertiesUtil.getProperty("close.order.task.time.hour","2"));
-        iOrderService.closeOrder(hour);
+//        iOrderService.closeOrder(hour);
         RedisShardedPoolUtil.del(Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK);
         log.info("释放{}，ThreadName：{}",Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK,Thread.currentThread().getName());
     }
