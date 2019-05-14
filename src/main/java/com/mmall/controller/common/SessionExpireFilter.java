@@ -12,6 +12,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+//springSession框架重置session时间
 public class SessionExpireFilter implements Filter{
 
     @Override

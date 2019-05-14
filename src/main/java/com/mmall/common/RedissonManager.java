@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+//redisson框架获得连接(只能实现单连接)
 @Component
 @Slf4j
 public class RedissonManager {

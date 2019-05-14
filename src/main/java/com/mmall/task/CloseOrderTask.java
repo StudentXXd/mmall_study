@@ -82,6 +82,7 @@ public class CloseOrderTask {
         log.info("关闭订单定时任务结束");
     }
 
+    //redisson框架实现分布式锁
 //    @Scheduled(cron = "0 */1 * * * ?")//每一分钟执行一次
     public void closeOrderTaskV4(){
         RLock lock = redissonManager.getRedisson().getLock(Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK);

@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+//实现RESTful风格
 @Controller
 @RequestMapping("/user/springsession/")
 public class UserSpringSessionController {

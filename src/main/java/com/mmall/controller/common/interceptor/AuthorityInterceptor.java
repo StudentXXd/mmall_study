@@ -20,6 +20,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
+//权限拦截器
 @Slf4j
 public class AuthorityInterceptor implements HandlerInterceptor{
     @Override
