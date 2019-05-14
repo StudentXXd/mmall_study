@@ -25,9 +25,9 @@ public class RedisShardedPool {
 
     private static Integer redisPort = PropertiesUtil.getIntegerProperty("redis1.port");
 
-    private static String redis2Ip = PropertiesUtil.getProperty("redis12.ip");
+    private static String redis2Ip = PropertiesUtil.getProperty("redis2.ip");
 
-    private static Integer redis2Port = PropertiesUtil.getIntegerProperty("redis12.port");
+    private static Integer redis2Port = PropertiesUtil.getIntegerProperty("redis2.port");
 
     private static void initPool(){
         JedisPoolConfig config = new JedisPoolConfig();
