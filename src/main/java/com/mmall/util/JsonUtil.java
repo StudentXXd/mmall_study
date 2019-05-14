@@ -11,7 +11,6 @@ import org.codehaus.jackson.map.SerializationConfig;
 import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 import org.codehaus.jackson.type.JavaType;
 import org.codehaus.jackson.type.TypeReference;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
